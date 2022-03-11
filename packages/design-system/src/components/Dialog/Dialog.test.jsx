@@ -47,6 +47,22 @@ describe('Dialog', function () {
     ).toMatchSnapshot();
   });
 
+  it('renders with title text', () => {
+    const { wrapper } = render({
+      titleText: 'Aria text label',
+    });
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.props()).not.toContain('titleId');
+  });
+
+  it('renders with title id', () => {
+    const { wrapper } = render({
+      titleId: 'custom-id',
+    });
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.props()).not.toContain('titleText');
+  });
+
   it('close button text and variation can be changed', () => {
     expect(
       render({

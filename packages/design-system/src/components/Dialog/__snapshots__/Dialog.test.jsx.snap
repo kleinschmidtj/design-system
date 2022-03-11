@@ -364,3 +364,85 @@ Object {
   </Displaced>,
 }
 `;
+
+exports[`Dialog renders with title id 1`] = `
+<Displaced
+  dialogClass="ds-c-dialog ds-base"
+  escapeExits={true}
+  focusDialog={true}
+  includeDefaultStyles={false}
+  mounted={true}
+  titleId="custom-id"
+  underlayClass="ds-c-dialog-wrap"
+  underlayClickExits={false}
+>
+  <div
+    role="document"
+  >
+    <header
+      className="ds-c-dialog__header"
+      role="banner"
+    >
+      <Button
+        aria-label="Close modal dialog"
+        className="ds-c-dialog__close"
+        variation="transparent"
+      >
+        <CloseIcon />
+        Close
+      </Button>
+    </header>
+    <main
+      className="ds-c-dialog__body"
+      role="main"
+    >
+      <div
+        id="dialog-content"
+      >
+        Foo
+      </div>
+    </main>
+  </div>
+</Displaced>
+`;
+
+exports[`Dialog renders with title text 1`] = `
+<Displaced
+  dialogClass="ds-c-dialog ds-base"
+  escapeExits={true}
+  focusDialog={true}
+  includeDefaultStyles={false}
+  mounted={true}
+  titleText="Aria text label"
+  underlayClass="ds-c-dialog-wrap"
+  underlayClickExits={false}
+>
+  <div
+    role="document"
+  >
+    <header
+      className="ds-c-dialog__header"
+      role="banner"
+    >
+      <Button
+        aria-label="Close modal dialog"
+        className="ds-c-dialog__close"
+        variation="transparent"
+      >
+        <CloseIcon />
+        Close
+      </Button>
+    </header>
+    <main
+      className="ds-c-dialog__body"
+      role="main"
+    >
+      <div
+        id="dialog-content"
+      >
+        Foo
+      </div>
+    </main>
+  </div>
+</Displaced>
+`;

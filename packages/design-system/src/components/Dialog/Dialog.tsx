@@ -354,6 +354,8 @@ export const Dialog = (props: DialogProps) => {
     onExit,
     size,
     title,
+    titleText,
+    titleId,
     ...modalProps
   } = props;
 
@@ -367,9 +369,11 @@ export const Dialog = (props: DialogProps) => {
   const actionsClassNames = classNames('ds-c-dialog__actions', actionsClassName);
   // TODO: remove after deprecating 'escapeExitDiabled' prop
   const escapeExitsProp = escapeExitDisabled ? !escapeExitDisabled : escapeExits;
-  const titleTextProp = titleText || undefined;
-  const titleIdProp = titleText ? "dialog-title dialog-content" : undefined;
-  
+  const defaultAriaLabelledBy = 'dialog-title dialog-content';
+  const ariaModalProps = {
+    titleText: titleText && !titleId ? titleText : undefined,
+    titleId: !titleText && !titleId ? defaultAriaLabelledBy : titleId || undefined,
+  };
   /* eslint-disable jsx-a11y/no-redundant-roles */
   return (
     <AriaModal
@@ -379,9 +383,8 @@ export const Dialog = (props: DialogProps) => {
       focusDialog
       includeDefaultStyles={false}
       onExit={onExit}
-      titleId={titleIdProp}
-      titleText={titleTextProp}
       underlayClass="ds-c-dialog-wrap"
+      {...ariaModalProps}
       {...modalProps}
     >
       <div role="document">
